@@ -35,3 +35,25 @@ label: string;
 icon: any; // Lucide icon component
 href: string;
 }
+
+// ... tipos existentes ...
+
+export interface Agendamento {
+  id: string;
+  clienteId: string;
+  clienteNome: string;
+  data: string; // formato: YYYY-MM-DD
+  hora: string; // formato: HH:MM
+  tipo: 'casamento' | 'ensaio-familia' | 'gestante' | 'aniversario' | 'pre-wedding' | 'outros';
+  valor: number;
+  status: 'confirmado' | 'pendente' | 'cancelado';
+  observacoes?: string;
+}
+
+export interface DiaCalendario {
+  dia: number;
+  mes: number;
+  ano: number;
+  temSessao: boolean;
+  quantidadeSessoes: number;
+}
