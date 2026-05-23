@@ -57,3 +57,27 @@ export interface DiaCalendario {
   temSessao: boolean;
   quantidadeSessoes: number;
 }
+
+// ... tipos existentes ...
+
+export interface PagamentoDetalhado {
+  id: string;
+  sessaoId: string;
+  clienteId: string;
+  clienteNome: string;
+  sessaoTipo: string;
+  valor: number;
+  dataPagamento: string | null; // null = não pago ainda
+  dataVencimento: string;
+  metodoPagamento: 'pix' | 'cartao' | 'boleto' | 'dinheiro' | 'transferencia';
+  status: 'pago' | 'pendente' | 'atrasado';
+  numeroParcela?: string; // Ex: "1/3"
+  observacoes?: string;
+}
+
+export interface ResumoFinanceiro {
+  totalRecebido: number;
+  aReceber: number;
+  atrasados: number;
+  recebidoMes: number;
+}
